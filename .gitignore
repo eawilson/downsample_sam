@@ -1,0 +1,5 @@
+downsample_sam
+*.o
+*.out
+*.txt
+*.sam
