@@ -154,6 +154,10 @@ int main (int argc, char **argv) {
         exit(EXIT_FAILURE);
         }
     
+    // print total reads to stderr
+    fprintf(stderr, "%zu\n", total_reads);
+    
+    
     if (strcmp(output_filename, "-") != 0 ) {
         if ((output_fp = fopen(output_filename, "w")) == NULL) {
             fprintf(stderr, "Error: Unable to open %s for writing\n", output_filename);
