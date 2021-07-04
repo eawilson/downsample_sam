@@ -174,9 +174,10 @@ int main (int argc, char **argv) {
         ordered_reads[i].read = i + 1;
         ordered_reads[i].order = rand();
         }
-    qsort(ordered_reads, total_reads, sizeof(OrderedRead), cmp_order);
-    qsort(ordered_reads, required_reads, sizeof(OrderedRead), cmp_read);
-    
+    if (required_reads < total_reads) {
+        qsort(ordered_reads, total_reads, sizeof(OrderedRead), cmp_order);
+        qsort(ordered_reads, required_reads, sizeof(OrderedRead), cmp_read);
+        }
     
     *previous_qname = '\0';
     fseek(input_fp, 0L, SEEK_SET);
