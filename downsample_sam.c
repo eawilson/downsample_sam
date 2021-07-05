@@ -154,8 +154,8 @@ int main (int argc, char **argv) {
         exit(EXIT_FAILURE);
         }
     
-    // print total reads to stderr
-    fprintf(stderr, "%zu\n", total_reads);
+    // print the number of reads in the output file to stderr
+    fprintf(stderr, "%zu\n", required_reads < total_reads ? required_reads : total_reads);
     
     
     if (strcmp(output_filename, "-") != 0 ) {
